@@ -64,7 +64,7 @@ namespace userprofile_api.Controllers
             {
                 Result userResult = await _userRepository.Create(user);
                 if (userResult.IsSuccess == true) {
-                    return Created("", "User has been saved successfully");
+                    return Created("", userResult);
                 } else
                 {
                     return BadRequest(userResult);
